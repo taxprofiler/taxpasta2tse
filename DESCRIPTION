@@ -12,6 +12,8 @@ Description: Convenience functions that load taxpasta output (primarily provided
 License: Apache License (>= 2)
 Encoding: UTF-8
 LazyData: true
+URL: https://github.com/taxprofiler/taxpasta2tse
+BugReports: https://github.com/taxprofiler/taxpasta2tse/issues
 RoxygenNote: 7.3.1
 Suggests: 
     testthat (>= 3.0.0)
