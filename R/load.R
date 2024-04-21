@@ -9,5 +9,6 @@
 #' @examples
 #' tse <- load_biom("profiles.biom")
 load_biom <- function(filename) {
-  return()
+  result <- mia::loadFromBiom(filename)
+  return(result)
 }
