@@ -3,7 +3,7 @@ Type: Package
 Title: Load taxpasta BIOM Output to TreeSummmarizedExperiment
 Version: 0.1.0
 Authors@R: 
-    person("Moritz", "Beber", middle = "Emanuel" ,
+    person(given = c("Moritz", "Emanuel"), family = "Beber",
     email = "midnighter@posteo.net", role = c("aut", "cre"),
     comment = c(ORCID = "0000-0003-2406-1978"))
 Description: Convenience functions that load taxpasta output (primarily provided
