@@ -1,5 +1,13 @@
-test_that("a taxpasta BIOM file can be loaded without error", {
+test_that("a well-formed taxpasta BIOM file can be loaded without error", {
   expect_no_error(taxpasta2tse::load_biom(test_path("data", "result.biom")))
+})
+
+test_that("loading a taxpasta BIOM file without taxonomy information generates a warning", {
+  expect_warning(taxpasta2tse::load_biom(test_path("data", "no_taxonomy.biom")))
+})
+
+test_that("loading a taxpasta BIOM file where the rank lineage does not match taxonomy columns generates an error", {
+  expect_error(taxpasta2tse::load_biom(test_path("data", "faulty_taxonomy.biom")))
 })
 
 result <- taxpasta2tse::load_biom(test_path("data", "result.biom"))
