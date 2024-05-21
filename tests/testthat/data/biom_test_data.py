@@ -28,7 +28,8 @@ def generate_complete_table() -> Table:
                 [90, 110],
                 [80, 100],
                 [70, 90],
-                [60, 80],
+                [40, 50],
+                [30, 40],
             ]
         ),
         observation_ids=[
@@ -37,15 +38,15 @@ def generate_complete_table() -> Table:
             "NCBI:txid186801",
             "NCBI:txid3085636",
             "NCBI:txid186803",
+            "NCBI:txid2603322",
         ],
         sample_ids=["A", "B"],
         observation_metadata=[
-            {"taxonomy": ["Root", "Bacteria"]},
-            {"taxonomy": ["Root", "Bacteria", "Terrabacteria group"]},
-            {"taxonomy": ["Root", "Bacteria", "Terrabacteria group", "Clostridia"]},
+            {"taxonomy": ["Bacteria"]},
+            {"taxonomy": ["Bacteria", "Terrabacteria group"]},
+            {"taxonomy": ["Bacteria", "Terrabacteria group", "Clostridia"]},
             {
                 "taxonomy": [
-                    "Root",
                     "Bacteria",
                     "Terrabacteria group",
                     "Clostridia",
@@ -54,7 +55,6 @@ def generate_complete_table() -> Table:
             },
             {
                 "taxonomy": [
-                    "Root",
                     "Bacteria",
                     "Terrabacteria group",
                     "Clostridia",
@@ -62,11 +62,20 @@ def generate_complete_table() -> Table:
                     "Lachnospiraceae",
                 ]
             },
+            {
+                "taxonomy": [
+                    "Bacteria",
+                    "Terrabacteria group",
+                    "Clostridia",
+                    "Lachnospirales",
+                    "Vallitaleaceae",
+                ]
+            },
         ],
         # FIXME (Moritz): This is not working as expected, see https://github.com/biocore/biom-format/issues/971.
-        # observation_group_metadata={"ranks": ("list", ["Root", "Kingdom", "Phylum", "Clade", "Order", "Family"])},
+        # observation_group_metadata={"ranks": ("list", ["Superkingdom", "Clade", "Class", "Order", "Family"])},
         observation_group_metadata={
-            "ranks": ("csv", "Root;Superkingdom;Clade;Class;Order;Family")
+            "ranks": ("csv", "Superkingdom;Clade;Class;Order;Family")
         },
         type="Taxon table",
     )
@@ -81,7 +90,8 @@ def generate_simple_table() -> Table:
                 [90, 110],
                 [80, 100],
                 [70, 90],
-                [60, 80],
+                [40, 50],
+                [30, 40],
             ]
         ),
         observation_ids=[
@@ -90,6 +100,7 @@ def generate_simple_table() -> Table:
             "NCBI:txid186801",
             "NCBI:txid3085636",
             "NCBI:txid186803",
+            "NCBI:txid2603322",
         ],
         sample_ids=["A", "B"],
         type="Taxon table",
@@ -105,7 +116,8 @@ def generate_less_ranks_table() -> Table:
                 [90, 110],
                 [80, 100],
                 [70, 90],
-                [60, 80],
+                [40, 50],
+                [30, 40],
             ]
         ),
         observation_ids=[
@@ -114,15 +126,15 @@ def generate_less_ranks_table() -> Table:
             "NCBI:txid186801",
             "NCBI:txid3085636",
             "NCBI:txid186803",
+            "NCBI:txid2603322",
         ],
         sample_ids=["A", "B"],
         observation_metadata=[
-            {"taxonomy": ["Root", "Bacteria"]},
-            {"taxonomy": ["Root", "Bacteria", "Terrabacteria group"]},
-            {"taxonomy": ["Root", "Bacteria", "Terrabacteria group", "Clostridia"]},
+            {"taxonomy": ["Bacteria"]},
+            {"taxonomy": ["Bacteria", "Terrabacteria group"]},
+            {"taxonomy": ["Bacteria", "Terrabacteria group", "Clostridia"]},
             {
                 "taxonomy": [
-                    "Root",
                     "Bacteria",
                     "Terrabacteria group",
                     "Clostridia",
@@ -131,7 +143,6 @@ def generate_less_ranks_table() -> Table:
             },
             {
                 "taxonomy": [
-                    "Root",
                     "Bacteria",
                     "Terrabacteria group",
                     "Clostridia",
@@ -139,8 +150,17 @@ def generate_less_ranks_table() -> Table:
                     "Lachnospiraceae",
                 ]
             },
+            {
+                "taxonomy": [
+                    "Bacteria",
+                    "Terrabacteria group",
+                    "Clostridia",
+                    "Lachnospirales",
+                    "Vallitaleaceae",
+                ]
+            },
         ],
-        observation_group_metadata={"ranks": ("csv", "Root;Superkingdom;Class;Family")},
+        observation_group_metadata={"ranks": ("csv", "Superkingdom;Class;Family")},
         type="Taxon table",
     )
 
@@ -154,7 +174,8 @@ def generate_more_ranks_table() -> Table:
                 [90, 110],
                 [80, 100],
                 [70, 90],
-                [60, 80],
+                [40, 50],
+                [30, 40],
             ]
         ),
         observation_ids=[
@@ -163,15 +184,15 @@ def generate_more_ranks_table() -> Table:
             "NCBI:txid186801",
             "NCBI:txid3085636",
             "NCBI:txid186803",
+            "NCBI:txid2603322",
         ],
         sample_ids=["A", "B"],
         observation_metadata=[
-            {"taxonomy": ["Root", "Bacteria"]},
-            {"taxonomy": ["Root", "Bacteria", "Terrabacteria group"]},
-            {"taxonomy": ["Root", "Bacteria", "Terrabacteria group", "Clostridia"]},
+            {"taxonomy": ["Bacteria"]},
+            {"taxonomy": ["Bacteria", "Terrabacteria group"]},
+            {"taxonomy": ["Bacteria", "Terrabacteria group", "Clostridia"]},
             {
                 "taxonomy": [
-                    "Root",
                     "Bacteria",
                     "Terrabacteria group",
                     "Clostridia",
@@ -180,7 +201,6 @@ def generate_more_ranks_table() -> Table:
             },
             {
                 "taxonomy": [
-                    "Root",
                     "Bacteria",
                     "Terrabacteria group",
                     "Clostridia",
@@ -188,9 +208,18 @@ def generate_more_ranks_table() -> Table:
                     "Lachnospiraceae",
                 ]
             },
+            {
+                "taxonomy": [
+                    "Bacteria",
+                    "Terrabacteria group",
+                    "Clostridia",
+                    "Lachnospirales",
+                    "Vallitaleaceae",
+                ]
+            },
         ],
         observation_group_metadata={
-            "ranks": ("csv", "Root;Superkingdom;Clade;Class;Order;Family;Genus;Species")
+            "ranks": ("csv", "Superkingdom;Clade;Class;Order;Family;Genus;Species")
         },
         type="Taxon table",
     )
