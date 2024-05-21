@@ -2,19 +2,19 @@
 % Please edit documentation in R/load.R
 \name{load_biom}
 \alias{load_biom}
-\title{Load BIOM format file to TreeSummarizedExperiment}
+\title{Load BIOM format file to `TreeSummarizedExperiment`}
 \usage{
 load_biom(filename)
 }
 \arguments{
-\item{filename}{A character vector with one element that denotes the file path
-to a BIOM file.}
+\item{filename}{A character vector with one element that denotes the file
+path to a BIOM file.}
 }
 \value{
-A TreeSummarizedExperiemnt object
+A [TreeSummarizedExperiment::TreeSummarizedExperiment()] object.
 }
 \description{
-Load BIOM format file to TreeSummarizedExperiment
+Load BIOM format file to `TreeSummarizedExperiment`
 }
 \examples{
 tse <- load_biom("profiles.biom")
