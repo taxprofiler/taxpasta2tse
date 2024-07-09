@@ -18,6 +18,11 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
+**N.B.: The functionality presented here, was [merged into the `mia`
+R-package](https://github.com/microbiome/mia/pull/574) and is available as the
+[`mia::importTaxpasta`](https://microbiome.github.io/mia/reference/importTaxpasta.html)
+function from version `1.13.28`. Development here is discontinued.**
+
 `taxpasta2tse` provides convenience functions that load taxpasta output (primarily
 in BIOM format) into a TreeSummarizedExperiment (TSE) object with a
 correctly formatted taxonomic tree.
